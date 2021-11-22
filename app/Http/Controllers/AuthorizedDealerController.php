@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\form;
+use App\Http\Requests\validate;
 use App\Models\Authorized_dealer;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
@@ -36,9 +37,11 @@ class AuthorizedDealerController extends Controller
         return view('dealers.edit',compact('dealer'));
     }
 
-    public function update(form $request){
+    public function update(validate $request){
         $dealer = Authorized_dealer::findOrFail($request->old);
-        $dealer -> id = $request -> id;
+        if($request->old != $request->id){
+            $dealer -> id = $request -> id;
+        }
         $dealer -> name = $request -> name;
         $dealer -> phone_number = $request -> phone_number;
         $dealer -> email = $request -> email;
