@@ -38,10 +38,8 @@ class AuthorizedDealerController extends Controller
     }
 
     public function update(validate $request){
-        $dealer = Authorized_dealer::findOrFail($request->old);
-        if($request->old != $request->id){
-            $dealer -> id = $request -> id;
-        }
+        $dealer = Authorized_dealer::findOrFail($request->id);
+
         $dealer -> name = $request -> name;
         $dealer -> phone_number = $request -> phone_number;
         $dealer -> email = $request -> email;
