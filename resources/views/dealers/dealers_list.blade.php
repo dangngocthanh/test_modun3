@@ -32,7 +32,12 @@
             <strong>Danh sách đại lý phân phối</strong>
         </div>
         <hr>
-
+        @if (Session::has('success'))
+            <p class="text-success">
+                <i class="fa fa-check" aria-hidden="true"></i>
+                {{ Session::get('success') }}
+            </p>
+        @endif
         <table class="table table-borderless">
             <thead>
             <tr>
