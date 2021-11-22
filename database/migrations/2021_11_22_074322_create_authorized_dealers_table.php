@@ -14,7 +14,7 @@ class CreateAuthorizedDealersTable extends Migration
     public function up()
     {
         Schema::create('authorized_dealers', function (Blueprint $table) {
-            $table->id();
+            $table->integer('id');
             $table->string('name');
             $table->string('phone_number');
             $table->string('email');
@@ -22,6 +22,7 @@ class CreateAuthorizedDealersTable extends Migration
             $table->string('manager_name');
             $table->string('status');
             $table->timestamps();
+            $table->primary('id');
         });
     }
 

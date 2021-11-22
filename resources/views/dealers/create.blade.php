@@ -8,8 +8,11 @@
             @csrf
             <div class="form-row">
                 <div class="form-group col-md-6">
-{{--                    <label for="inputEmail4">Mã số đại lý</label>--}}
-{{--                    <input type="email" class="form-control" name="id" id="inputEmail4">--}}
+                    <label for="inputEmail4">Mã số đại lý</label>
+                    <input type="text" class="form-control" name="id" id="inputEmail4">
+                    @error('id')
+                    <p class="text-danger">{{ $message }}</p>
+                    @enderror
 
                     <label for="inputPassword4">Tên đại lý</label>
                     <input type="text" class="form-control" name="name" id="inputPassword4">

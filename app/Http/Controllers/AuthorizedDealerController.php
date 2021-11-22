@@ -20,6 +20,7 @@ class AuthorizedDealerController extends Controller
 
     public function store(form $request){
         $dealer = new Authorized_dealer();
+        $dealer -> id = $request -> id;
         $dealer -> name = $request -> name;
         $dealer -> phone_number = $request -> phone_number;
         $dealer -> email = $request -> email;
@@ -36,7 +37,8 @@ class AuthorizedDealerController extends Controller
     }
 
     public function update(form $request){
-        $dealer = Authorized_dealer::findOrFail($request->id);
+        $dealer = Authorized_dealer::findOrFail($request->old);
+        $dealer -> id = $request -> id;
         $dealer -> name = $request -> name;
         $dealer -> phone_number = $request -> phone_number;
         $dealer -> email = $request -> email;

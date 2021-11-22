@@ -9,8 +9,8 @@
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="inputEmail4">Mã số đại lý</label>
-                    <input type="text" class="form-control" value="{{ $dealer->id }}" id="inputEmail4" disabled>
-                    <input type="hidden" class="form-control" value="{{ $dealer->id }}" name="id" id="inputEmail4" >
+                    <input type="hidden" class="form-control" value="{{ $dealer->id }}" name="old" id="inputEmail4" >
+                    <input type="text" class="form-control" value="{{ $dealer->id }}" name="id" id="inputEmail4" >
 
                     <label for="inputPassword4">Tên đại lý</label>
                     <input type="text" class="form-control" value="{{ $dealer->name }}" name="name" id="inputPassword4">

@@ -24,6 +24,7 @@ class form extends FormRequest
     public function rules()
     {
         return [
+            'id' => 'required|unique:authorized_dealers,id',
             'name' => 'required',
             'phone_number' => 'required',
             'email' => 'required|email',
@@ -35,6 +36,8 @@ class form extends FormRequest
     public function messages()
     {
         return [
+            'id.required' => 'Mã đại lý không được trống',
+            'id.unique' => 'Mã đại lý đã tôn tại',
             'name.required' => 'Tên đại lí không được để trống',
             'phone_number.required' => 'Số điện thoại không được để trống',
             'email.required' => 'Email không được để trống',
